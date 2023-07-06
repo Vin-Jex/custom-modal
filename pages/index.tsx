@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useRef, useEffect } from "react";
 
 interface ModalProps {
@@ -6,7 +7,7 @@ interface ModalProps {
   children: React.ReactNode;
 }
 
-const index: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+const Index: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,6 +44,9 @@ const index: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return (
     <>
+      <Head>
+        <title>Custom Modal</title>
+      </Head>
       <div className='fixed inset-0 flex items-center justify-center'>
         <div className='fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm'></div>
         <div
@@ -68,4 +72,4 @@ const index: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   );
 };
 
-export default Modal;
+export default Index;
